@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Login Suite" verbose="0" parallel="classes" thread-count="5" time-out="30000">
+    <parameter name="password" value="admin123"/>
+    <test thread-count="5" name="Login Test Valid" verbose="0">
+        <parameter name="username" value="Admin"/>
+        <classes>
+            <class name="org.example.tests.BaseTest"/>
+            <class name="org.example.tests.workflows.LoginWorkflowTest">
+                <methods>
+
+                    <include name="testLoginValidDuplicate"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Surefire test -->
+
+
+</suite> <!-- Surefire suite -->
